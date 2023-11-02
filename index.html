@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--LA PAGINA SE VE MUCHO MEJOR EN FORMATO CELULAR-->
+    <!--EL CSS ME AYUDE MUCHO DE VIDEOS DE YOUTUBE-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loneria</title>
+    <link rel="stylesheet" href="Loneria.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="logo">Loneria Pisani</p>
+            <nav>
+                <a href="#">Sobre Nosotros</a>
+                <a href="#">Nuestros Trabajos</a>
+                <a href="#">Contactenos</a>
+            </nav>
+        </div>
+    </header>
+    <section id="cabezera">
+
+        <h1>Los mejores precios <br>
+            de toda Mar del Plata
+        </h1>
+        <img src="img/internet-satelite-barato-300x300.png" alt="Imagen 1" width="400" height="300">
+
+    </section>
+    
+    <!--Las secciones funcionan muy bien para que este todo mas organizado-->
+
+    <section id="sobre_nosotros">
+
+        <div class="container">
+            
+            <h2>Somos lo que buscabas</h2>
+            <h3>
+                <ul>
+                <li >MEJORES PRECIOS</li>
+                <li>MEJORES PERSONAS</li>
+                <li>GRANDES PRODUCTOS</li>
+              </ul>
+            </h3>
+            <p>aca va texto para que compre compre compre.</p>
+
+          <h4>
+            <table>
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Lona PVC 500g</td>
+                    <td>$1000</td>
+                    <td>25mtrs</td>
+                  </tr>
+                  <tr>
+                    <td>Lona PVC 650g</td>
+                    <td>$1500</td>
+                    <td>300mtrs</td>
+                  </tr>
+                  <tr>
+                    <td>Lona Carioca</td>
+                    <td>$900</td>
+                    <td>50mtrs</td>
+                  </tr>
+                </tbody>
+              </table>
+          </h4>  
+
+        </div>
+
+        <div class="trabajos">
+
+            <img src="img/ee.jpg" alt="Imagen 1" width="400" height="300">
+            <img src="img/a.jpg" alt="Imagen 2" width="400" height="300">
+            <img src="img/c.jpg" alt="Imagen 3" width="400" height="300">
+          </div>
+
+    </section>
+    
+<section id="Contactenos">
+
+    <h2 id="Contactenos"></h2>
+    <h2>Contactenos</h2>
+    <a href="https://wa.me/592-4498">Mandanos un mensaje a Whatsapp</a><br> 
+    <a href="https://www.instagram.com/loneriapisani/">Seguinos en Instagram</a><br>
+
+</section>
+
+<div class="container-form">
+
+    <h4>suscribite a nuestro news letter para enterarte de las ultimas novedades</h4>
+
+    <form id="form-consults">
+        <label for="NNombre">Nombre</label>
+        <input type="text" id="NNombre" name="NNombre" required>
+<br>
+<br>
+
+        <label for="MMail">Mail</label>
+        <input type="text" id="MMail" name="MMail" required>
+<br>
+<br>
+            <button type="submit">Suscribirse</button>
+
+    </form>
+</div>
+<section id="datos_registrados">
+  <h4>Datos Registrados</h4>
+  <ul id="lista_datos">
+   
+  </ul>
+</section>
+
+
+<footer>
+
+    <div class="container">
+        <p>Gracias por elegirnos</p>
+    </div>
+
+</footer>
+<script>
+  addEventListener('load', () => {
+    const form = document.getElementById('form-consults');
+    form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    const formData = new FormData(form)
+    const data = Object.fromEntries(formData)
+    console.log(data)
+
+    fetch('http://localhost:3000/guardar', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(res => res.json())
+    .then(data => console.log(data))
+  })})
+</script>
+</body>
+
+</html>

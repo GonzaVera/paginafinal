@@ -1,0 +1,105 @@
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+}
+
+h1 {font-size: 3.5em;}
+h2 {font-size: 2.7em;}
+h3 {font-size: 2em;}
+p {font-size: 1.25em;}
+ul {list-style: none;}
+button {
+    padding: 12.5px 30px;
+    border: 0;
+    border-radius: 100px;
+    background-color: #0a4dc9;
+    color: #ffffff;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+  
+  button:hover {
+    background-color: #6fc5ff;
+    box-shadow: 0 0 20px #6fc5ff50;
+    transform: scale(1.1);
+  }
+  
+  button:active {
+    background-color: #3d94cf;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+  }
+
+  .container
+  {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  header
+  {
+    background: rgb(245,245,245);
+  }
+
+  header.logo
+  {
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: bold;
+    color:dodgerblue;
+    font-size: 2em;
+  }
+
+  header.container
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header.nav
+  {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+  }
+
+  header.a
+  {
+    padding: 5px 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead th {
+    background-color: #3b6dda; 
+    text-align: left;
+    padding: 10px;
+  }
+  
+  tbody td {
+    border-bottom: 1px solid #0c0b0b;
+    padding: 10px;
+  }
+  
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
